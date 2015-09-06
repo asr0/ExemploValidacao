@@ -1,0 +1,110 @@
+﻿@model ExemploValidacao.Models.Pessoa
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Validação Pessoa</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.ValidationSummary(true)
+    <fieldset>
+        <legend>Dados da Pessoa</legend>
+
+        <div class="form-group">
+            <div class="dysplay-label">
+                @Html.LabelFor(model => model.Nome)
+            </div>
+            <div class="dysplay-field">
+                @Html.EditorFor(model => model.Nome)
+                @Html.ValidationMessageFor(model => model.Nome)
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="dysplay-label">
+                @Html.LabelFor(model => model.Email)
+            </div>
+            <div class="dysplay-field">
+                @Html.EditorFor(model => model.Email)
+                @Html.ValidationMessageFor(model => model.Email)
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="dysplay-label">
+                @Html.LabelFor(model => model.Curriculo)
+            </div>
+            <div class="dysplay-field">
+                @Html.TextAreaFor(model => model.Curriculo)
+                @Html.ValidationMessageFor(model => model.Curriculo)
+            </div>
+        </div>
+
+
+        <div class="form-group">
+            <div class="dysplay-label">
+                @Html.LabelFor(model => model.Salario)
+            </div>
+            <div class="dysplay-field">
+                @Html.EditorFor(model => model.Salario)
+                @Html.ValidationMessageFor(model => model.Salario)
+            </div>
+        </div>
+
+
+        <div class="form-group">
+            <div class="dysplay-label">
+                @Html.LabelFor(model => model.DataNascimento)
+            </div>
+            <div class="dysplay-field">
+                @Html.EditorFor(model => model.DataNascimento)
+                @Html.ValidationMessageFor(model => model.DataNascimento)
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="dysplay-label">
+                @Html.LabelFor(model => model.Login)
+            </div>
+            <div class="dysplay-field">
+                @Html.EditorFor(model => model.Login)
+                @Html.ValidationMessageFor(model => model.Login)
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="dysplay-label">
+                @Html.LabelFor(model => model.Senha)
+            </div>
+            <div class="dysplay-field">
+                @Html.PasswordFor(model => model.Senha)
+                @Html.ValidationMessageFor(model => model.Senha)
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="dysplay-label">
+                @Html.LabelFor(model => model.ConfirmarSenha)
+            </div>
+            <div class="dysplay-field">
+                @Html.PasswordFor(model => model.ConfirmarSenha)
+                @Html.ValidationMessageFor(model => model.ConfirmarSenha)
+            </div>
+        </div>
+
+        <div>
+
+        </div>
+        <p>
+            <input type="submit" name="Enviar" value="Enviar"/>
+        </p>
+
+    </fieldset>
+}
+
+
+@section Scripts{
+    @Scripts.Render("~/bundles/jqueryval")
+}
